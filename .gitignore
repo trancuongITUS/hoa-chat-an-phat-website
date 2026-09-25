@@ -1,0 +1,17 @@
+node_modules/
+.next/
+out/
+build/
+.DS_Store
+*.pem
+.env*
+!.env.example
+next-env.d.ts
+tsconfig.tsbuildinfo
+
+# Agent tooling
+/.agentkit
+/.claude
+
+# Source images (processed copies live in assets/processed-images and public/)
+/assets/raw-images

@@ -1,0 +1,570 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+/* ==========================================================================
+   Design System — Hoá chất An Phát
+   Nguồn: docs/design-system/hoa-chat-an-phat/MASTER.md
+   Quy tắc: component chỉ dùng token ngữ nghĩa, không viết hex thô.
+   Mỗi token màu khai báo song song cả light và dark (MASTER §2.6).
+   ========================================================================== */
+
+@theme {
+  --font-heading: var(--font-be-vietnam-pro), ui-sans-serif, system-ui, sans-serif;
+  --font-body: var(--font-noto-sans), ui-sans-serif, system-ui, sans-serif;
+
+  /* §2.1 An Phát Blue */
+  --color-primary-50: #f0f6fc;
+  --color-primary-100: #dceaf7;
+  --color-primary-200: #b9d5ef;
+  --color-primary-300: #8bb8e2;
+  --color-primary-400: #5594cf;
+  --color-primary-500: #2f72b4;
+  --color-primary-600: #1d5a97;
+  --color-primary-700: #17487a;
+  --color-primary-800: #133a61;
+  --color-primary-900: #102f4e;
+  --color-primary-950: #0a1f34;
+
+  /* §2.2 Safety Orange — chỉ dùng cho CTA chuyển đổi */
+  --color-cta-50: #fff1e9;
+  --color-cta-400: #ea7c33;
+  --color-cta-hover-dark: #f0894a;
+  --color-cta-600: #b23f0c;
+  --color-cta-700: #93330a;
+
+  /* §2.3 Trung tính */
+  --color-neutral-0: #ffffff;
+  --color-neutral-50: #f7f9fc;
+  --color-neutral-100: #eef1f5;
+  --color-neutral-200: #dde3eb;
+  --color-neutral-300: #c6cfda;
+  --color-neutral-400: #7a8ca3;
+  --color-neutral-500: #55657a;
+  --color-neutral-700: #33445a;
+  --color-neutral-900: #0f1d2e;
+
+  /* Nền tối: chữ và mực dùng chung cho hero, footer, khối CTA */
+  --color-ink: #0c1622;
+  --color-on-dark: #e6edf5;
+  --color-on-dark-muted: #9aaabe;
+
+  /* §2.4 Ngữ nghĩa */
+  --color-success: #15803d;
+  --color-success-bg: #eaf7ef;
+  --color-warning: #a15c07;
+  --color-warning-bg: #fef6e7;
+  --color-danger: #b91c1c;
+  --color-danger-bg: #feecec;
+  --color-info: #0369a1;
+  --color-info-bg: #e9f4fb;
+
+  /* §2.5 Phân loại nguy hại GHS — luôn dùng kèm pictogram và nhãn chữ */
+  --color-ghs01-bg: #fdf3e7;
+  --color-ghs01-fg: #92400e;
+  --color-ghs02-bg: #feecec;
+  --color-ghs02-fg: #b91c1c;
+  --color-ghs03-bg: #fef6e7;
+  --color-ghs03-fg: #a15c07;
+  --color-ghs04-bg: #e9f4fb;
+  --color-ghs04-fg: #0369a1;
+  --color-ghs05-bg: #fff1e9;
+  --color-ghs05-fg: #9a3412;
+  --color-ghs06-bg: #f8eefe;
+  --color-ghs06-fg: #7e22ce;
+  --color-ghs07-bg: #fef9e7;
+  --color-ghs07-fg: #a16207;
+  --color-ghs08-bg: #fdebf2;
+  --color-ghs08-fg: #be185d;
+  --color-ghs09-bg: #eaf7ef;
+  --color-ghs09-fg: #15803d;
+
+  /* Viền đỏ chuẩn của hình thoi pictogram GHS — không đổi màu (MASTER §8) */
+  --color-ghs-frame: #d32011;
+
+  /* §4.3 Bo góc */
+  --radius-xs: 2px;
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 12px;
+  --radius-xl: 16px;
+
+  /* §4.4 Đổ bóng */
+  --shadow-xs: 0 1px 2px rgb(15 29 46 / 0.06);
+  --shadow-sm: 0 1px 3px rgb(15 29 46 / 0.08), 0 1px 2px rgb(15 29 46 / 0.06);
+  --shadow-md: 0 4px 12px rgb(15 29 46 / 0.08);
+  --shadow-lg: 0 12px 24px rgb(15 29 46 / 0.1);
+  --shadow-xl: 0 24px 48px rgb(15 29 46 / 0.14);
+
+  /* §5 Chuyển động */
+  --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+  --ease-in: cubic-bezier(0.4, 0, 1, 1);
+  --ease-standard: cubic-bezier(0.4, 0, 0.2, 1);
+
+  --duration-fast: 150ms;
+  --duration-base: 200ms;
+  --duration-slow: 300ms;
+  --duration-exit: 120ms;
+  /* Chờ bao lâu mới hiện trạng thái đang tải — phản hồi nhanh hơn thì không nháy (§7.8) */
+  --duration-continuity-delay: 300ms;
+  --stagger: 40ms;
+}
+
+/* Token ngữ nghĩa dùng bởi component (shadcn/ui đọc đúng các tên này) */
+:root {
+  --background: #f7f9fc;
+  --foreground: #0f1d2e;
+  --card: #ffffff;
+  --card-foreground: #0f1d2e;
+  --popover: #ffffff;
+  --popover-foreground: #0f1d2e;
+  --primary: #1d5a97;
+  --primary-foreground: #ffffff;
+  --secondary: #eef1f5;
+  --secondary-foreground: #0f1d2e;
+  --cta: #b23f0c;
+  --cta-foreground: #ffffff;
+  --muted: #eef1f5;
+  --muted-foreground: #55657a;
+  --accent: #f0f6fc;
+  --accent-foreground: #17487a;
+  --destructive: #b91c1c;
+  --destructive-foreground: #ffffff;
+  --success: #15803d;
+  --warning: #a15c07;
+  --info: #0369a1;
+  --border: #dde3eb;
+  --border-control: #7a8ca3;
+  --input: #7a8ca3;
+  --ring: #1d5a97;
+}
+
+.dark {
+  --background: #0c1622;
+  --foreground: #e6edf5;
+  --card: #132232;
+  --card-foreground: #e6edf5;
+  --popover: #1a2c40;
+  --popover-foreground: #e6edf5;
+  --primary: #8bb8e2;
+  --primary-foreground: #0c1622;
+  --secondary: #1a2c40;
+  --secondary-foreground: #e6edf5;
+  --cta: #ea7c33;
+  --cta-foreground: #0c1622;
+  --muted: #1a2c40;
+  --muted-foreground: #9aaabe;
+  --accent: #17487a;
+  --accent-foreground: #e6edf5;
+  --destructive: #f87171;
+  --destructive-foreground: #0c1622;
+  --success: #4ade80;
+  --warning: #fbbf24;
+  --info: #7dd3fc;
+  --border: #2a3d52;
+  --border-control: #5a7389;
+  --input: #5a7389;
+  --ring: #8bb8e2;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-cta: var(--cta);
+  --color-cta-foreground: var(--cta-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-border-control: var(--border-control);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+}
+
+@layer base {
+  * {
+    border-color: var(--border);
+  }
+
+  html {
+    -webkit-text-size-adjust: 100%;
+    /* §4.5 Header dính 72px desktop / 60px mobile */
+    scroll-padding-top: 76px;
+    /* Cuộn mượt khi nhảy tới neo trong trang (mục lục, tóm tắt lỗi, "Bỏ qua tới nội dung").
+       Chuyển trang vẫn cuộn tức thì nhờ `data-scroll-behavior="smooth"` trên <html>. */
+    scroll-behavior: smooth;
+  }
+
+  body {
+    background: var(--background);
+    color: var(--foreground);
+    font-family: var(--font-body);
+    font-size: 16px;
+    line-height: 26px;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: var(--font-heading);
+    text-wrap: balance;
+  }
+
+  /* §10 Focus ring nhìn thấy được trên mọi phần tử tương tác */
+  :where(a, button, [role="button"], input, select, textarea, summary, [tabindex]):focus-visible {
+    outline: 2px solid var(--ring);
+    outline-offset: 2px;
+    border-radius: var(--radius-sm);
+  }
+
+  /* Neo trong trang không bị header dính che (MASTER §4.5) */
+  :target {
+    scroll-margin-top: 76px;
+  }
+}
+
+@layer components {
+  /* §3.2 Thang chữ — cỡ trong ngoặc của spec áp cho < 768px */
+  .text-display {
+    font-family: var(--font-heading);
+    font-weight: 700;
+    font-size: 32px;
+    line-height: 40px;
+    letter-spacing: -0.01em;
+  }
+
+  .text-h1 {
+    font-family: var(--font-heading);
+    font-weight: 700;
+    font-size: 28px;
+    line-height: 36px;
+    letter-spacing: -0.01em;
+  }
+
+  .text-h2 {
+    font-family: var(--font-heading);
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 32px;
+  }
+
+  .text-h3 {
+    font-family: var(--font-heading);
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 28px;
+  }
+
+  .text-h4 {
+    font-family: var(--font-heading);
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 28px;
+  }
+
+  .text-h5 {
+    font-family: var(--font-heading);
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 26px;
+  }
+
+  @media (width >= 768px) {
+    .text-display {
+      font-size: 48px;
+      line-height: 56px;
+    }
+
+    .text-h1 {
+      font-size: 36px;
+      line-height: 44px;
+    }
+
+    .text-h2 {
+      font-size: 30px;
+      line-height: 38px;
+    }
+
+    .text-h3 {
+      font-size: 24px;
+      line-height: 32px;
+    }
+  }
+
+  .text-body-lg {
+    font-family: var(--font-body);
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 30px;
+  }
+
+  .text-body {
+    font-family: var(--font-body);
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 26px;
+  }
+
+  .text-body-sm {
+    font-family: var(--font-body);
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 22px;
+  }
+
+  .text-label {
+    font-family: var(--font-body);
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 20px;
+  }
+
+  .text-caption {
+    font-family: var(--font-body);
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 18px;
+  }
+
+  .text-overline {
+    font-family: var(--font-body);
+    font-weight: 600;
+    font-size: 12px;
+    line-height: 16px;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+  }
+
+  /* §4.2 Container — gutter 16/24/32, nội dung tối đa 1280px */
+  .container-site {
+    width: 100%;
+    margin-inline: auto;
+    max-width: calc(1280px + 64px);
+    padding-inline: 16px;
+  }
+
+  .container-wide {
+    width: 100%;
+    margin-inline: auto;
+    max-width: calc(1440px + 64px);
+    padding-inline: 16px;
+  }
+
+  @media (width >= 640px) {
+    .container-site,
+    .container-wide {
+      padding-inline: 24px;
+    }
+  }
+
+  @media (width >= 1024px) {
+    .container-site,
+    .container-wide {
+      padding-inline: 32px;
+    }
+  }
+
+  /* §4.1 Padding dọc section: 96 desktop / 64 tablet / 48 mobile */
+  .section-y {
+    padding-block: 48px;
+  }
+
+  @media (width >= 768px) {
+    .section-y {
+      padding-block: 64px;
+    }
+  }
+
+  @media (width >= 1024px) {
+    .section-y {
+      padding-block: 96px;
+    }
+  }
+}
+
+@utility tabular {
+  font-variant-numeric: tabular-nums;
+}
+
+/* Độ dài dòng 60–75 ký tự cho khối văn bản dài (§3.3) */
+@utility measure {
+  max-width: 68ch;
+}
+
+/* §5 Vào theo stagger — dùng cho lưới thẻ, tắt khi reduced-motion */
+@keyframes rise-in {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+/* Fill `backwards` giữ khung đầu trong lúc chờ stagger và không giữ gì sau khi chạy xong.
+   Thứ tự trong lưới truyền vào qua biến `--stagger-index`. Hover nhấc thẻ dùng thuộc tính
+   `translate` (Tailwind v4), nên transition của thẻ phải liệt kê `translate`, không phải
+   `transform`. */
+.animate-rise-in {
+  animation: rise-in var(--duration-slow) var(--ease-out) backwards;
+  animation-delay: calc(var(--stagger-index, 0) * var(--stagger));
+}
+
+/* Lưới nằm dưới màn hình đầu chờ vào khung nhìn rồi mới chạy (`RevealGroup`). Chỉ áp khi
+   trình duyệt chạy script, để lưới không bao giờ bị giấu khi JavaScript không chạy. */
+@media (scripting: enabled) {
+  [data-reveal="pending"] .animate-rise-in {
+    animation-play-state: paused;
+  }
+}
+
+/* Thông báo người dùng không chủ động gọi ra (lỗi form): trượt 4px và hiện dần để mắt bắt
+   được. Dựng trên tw-animate nên nhánh reduced-motion tự bỏ phần trượt. */
+.animate-attention-in {
+  @apply animate-in fade-in-0 slide-in-from-top-1 duration-[var(--duration-base)] ease-[var(--ease-out)];
+}
+
+/* Dòng trong danh sách mở ra / thu lại để phần bên dưới trượt theo thay vì nhảy. Phần tử
+   mang class phải là `grid` một hàng `1fr`, con trực tiếp có `min-h-0 overflow-hidden`. */
+@keyframes row-expand {
+  from {
+    grid-template-rows: 0fr;
+    opacity: 0;
+  }
+}
+
+@keyframes row-collapse {
+  to {
+    grid-template-rows: 0fr;
+    opacity: 0;
+  }
+}
+
+.animate-row-expand {
+  animation: row-expand var(--duration-base) var(--ease-out);
+}
+
+.animate-row-collapse {
+  animation: row-collapse var(--duration-exit) var(--ease-in) forwards;
+}
+
+/* Trạng thái chờ chỉ hiện khi phải chờ lâu hơn `--duration-continuity-delay`; phản hồi nhanh
+   hơn thì người dùng không thấy khung xám nháy lên (MASTER §7.8). */
+@keyframes continuity-in {
+  from {
+    opacity: 0;
+  }
+}
+
+.continuity-delayed {
+  animation: continuity-in var(--duration-base) var(--ease-out) var(--duration-continuity-delay) backwards;
+}
+
+/* Dải khách hàng chạy ngang liên tục (home.md §7). Track chứa hai bản danh sách giống
+   nhau, dịch -50% rồi lặp lại nên chỗ nối không lộ. Mỗi danh sách có padding phải bằng
+   khoảng cách giữa các thẻ để nhịp đều ở chỗ nối. */
+@keyframes marquee-x {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+.marquee-viewport {
+  overflow: hidden;
+  mask-image: linear-gradient(to right, transparent, #000 48px, #000 calc(100% - 48px), transparent);
+}
+
+.marquee-track {
+  display: flex;
+  width: max-content;
+  animation: marquee-x 32s linear infinite;
+}
+
+.marquee-list {
+  display: flex;
+  gap: 16px;
+  padding-right: 16px;
+}
+
+.marquee-viewport:hover .marquee-track,
+.marquee-viewport:active .marquee-track {
+  animation-play-state: paused;
+}
+
+/* §5 prefers-reduced-motion */
+@media (prefers-reduced-motion: reduce) {
+  /* Dải khách hàng đứng yên: bỏ bản lặp, xuống dòng như lưới thường */
+  .marquee-viewport {
+    mask-image: none;
+  }
+
+  .marquee-track {
+    animation: none;
+    width: auto;
+  }
+
+  .marquee-list {
+    flex-wrap: wrap;
+    padding-right: 0;
+  }
+
+  .marquee-duplicate {
+    display: none;
+  }
+
+  /* WCAG 2.3.3 coi trượt và phóng to là chuyển động, còn mờ dần thì không. Nên bỏ dịch
+     chuyển, phóng to và xoay; giữ đổi opacity/màu nhưng rút về tối đa 100ms (MASTER §5). */
+  *,
+  *::before,
+  *::after {
+    --tw-enter-translate-x: 0 !important;
+    --tw-enter-translate-y: 0 !important;
+    --tw-exit-translate-x: 0 !important;
+    --tw-exit-translate-y: 0 !important;
+    --tw-enter-scale: 1 !important;
+    --tw-exit-scale: 1 !important;
+    --tw-enter-rotate: 0 !important;
+    --tw-exit-rotate: 0 !important;
+    animation-duration: 100ms !important;
+    animation-iteration-count: 1 !important;
+    /* Không có `transform`: hover nhấc thẻ, nút nhấn, chevron đổi trạng thái tức thì */
+    transition-property: color, background-color, border-color, outline-color, text-decoration-color,
+      fill, stroke, box-shadow, opacity !important;
+    transition-duration: 100ms !important;
+    scroll-behavior: auto !important;
+  }
+
+  /* Vòng lặp (spinner, skeleton nhấp nháy) đứng yên; trạng thái chờ vẫn đọc được qua
+     `aria-busy` và hình khối skeleton. */
+  .animate-spin,
+  .animate-pulse {
+    animation: none !important;
+  }
+
+  .animate-rise-in {
+    animation: none;
+    opacity: 1;
+    transform: none;
+  }
+}
