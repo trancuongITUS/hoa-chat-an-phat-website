@@ -57,7 +57,9 @@ function HeroSection() {
         <div className="absolute inset-0 bg-[rgb(12_22_34_/_0.6)]" />
       </div>
 
-      <div className="container-wide relative py-16 lg:py-28">
+      {/* Header trang chủ nằm đè lên hero (60px mobile / 72px desktop), nên đệm trên phải
+          chừa chỗ cho header. Trên `lg` đệm 112px vốn đã đủ, không cần cộng thêm. */}
+      <div className="container-wide relative pt-27 pb-16 lg:py-28">
         <div className="max-w-3xl">
           <p className="text-overline text-primary-200">Nhà phân phối hoá chất công nghiệp</p>
           <h1 className="text-display mt-3 text-on-dark">{COMPANY.tagline}</h1>
@@ -67,7 +69,8 @@ function HeroSection() {
             và Hải Phòng.
           </p>
 
-          <div className="mt-8 flex flex-col gap-3 sm:flex-row">
+          {/* `data-hero-cta`: header chỉ hiện nút báo giá của nó khi cụm nút này đã khuất */}
+          <div data-hero-cta className="mt-8 flex flex-col gap-3 sm:flex-row">
             <Button asChild variant="ctaOnDark" size="lg">
               <Link href="/yeu-cau-bao-gia">
                 Yêu cầu báo giá
