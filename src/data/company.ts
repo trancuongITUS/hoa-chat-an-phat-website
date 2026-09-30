@@ -8,6 +8,7 @@
  */
 
 import { SITE_IMAGES } from '@/data/images'
+import type { ClientLogo } from '@/data/types'
 
 export const IS_SAMPLE_CONTENT = true
 
@@ -235,14 +236,26 @@ export const COMPLIANCE = [
   },
 ]
 
-/** home.md §7 — chỉ dùng logo đã có quyền sử dụng; hiện là chỗ dành sẵn. */
-export const CLIENT_LOGO_PLACEHOLDERS = [
-  'Khách hàng ngành dệt nhuộm',
-  'Khách hàng ngành xử lý nước',
-  'Khách hàng ngành thực phẩm',
-  'Khách hàng ngành xi mạ',
-  'Khách hàng ngành cao su nhựa',
-  'Khách hàng ngành vệ sinh công nghiệp',
+/**
+ * home.md §7 — dải logo khách hàng. Tên và logo đều là mẫu hư cấu, vẽ riêng cho bản demo
+ * (`public/images/clients/`). Trước khi chạy thật phải thay bằng logo khách hàng đã có văn
+ * bản đồng ý sử dụng thương hiệu.
+ */
+export const CLIENT_LOGOS: ClientLogo[] = [
+  { name: 'Vikatex – Vĩnh Khang Textile', industry: 'Dệt nhuộm', src: '/images/clients/vikatex.svg' },
+  { name: 'Aquaren Water Solutions', industry: 'Xử lý nước', src: '/images/clients/aquaren.svg' },
+  { name: 'Hương Đồng Foods', industry: 'Thực phẩm', src: '/images/clients/huong-dong.svg' },
+  { name: 'Kim Phong Plating', industry: 'Xi mạ', src: '/images/clients/kim-phong.svg' },
+  { name: 'Phước An Rubber', industry: 'Cao su nhựa', src: '/images/clients/phuoc-an.svg' },
+  { name: 'Sao Mai Industrial Cleaning', industry: 'Vệ sinh công nghiệp', src: '/images/clients/sao-mai.svg' },
+  { name: 'Lam Giang Dyeing', industry: 'Dệt nhuộm', src: '/images/clients/lam-giang.svg' },
+  { name: 'NXE – Nước Xanh Envirotech', industry: 'Xử lý nước', src: '/images/clients/nxe.svg' },
+  { name: 'Dalo – Đại Lộc Food', industry: 'Thực phẩm', src: '/images/clients/dalo.svg' },
+  { name: 'Tân Long Galvanizing', industry: 'Xi mạ', src: '/images/clients/tan-long.svg' },
+  { name: 'Polytan Plastic Packaging', industry: 'Cao su nhựa', src: '/images/clients/polytan.svg' },
+  { name: 'Sạch Việt Industrial Care', industry: 'Vệ sinh công nghiệp', src: '/images/clients/sach-viet.svg' },
+  { name: 'Sông Trà Beverage', industry: 'Thực phẩm', src: '/images/clients/song-tra.svg' },
+  { name: 'Vitilatex – Vĩnh Tiến Latex', industry: 'Cao su nhựa', src: '/images/clients/vitilatex.svg' },
 ]
 
 /** Chủ đề của form liên hệ ngắn (quote-contact.md §B4). */

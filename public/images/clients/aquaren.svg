@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 80" width="240" height="80" role="img" aria-label="Aquaren Water Solutions">
+  <circle cx="38" cy="40" r="28" fill="#1672C4"/>
+  <path d="M38 14 C38 14 29 25 29 31 C29 36 33 39 38 39 C43 39 47 36 47 31 C47 25 38 14 38 14 Z" fill="#9FD0F5"/>
+  <g fill="none" stroke="#fff" stroke-width="4" stroke-linecap="round"><path d="M15 47 Q23 40 31 47 T47 47 T61 47"/><path d="M19 57 Q27 50 35 57 T51 57 T57 56"/></g>
+  <text x="76" y="46" font-family="&apos;Trebuchet MS&apos;, Verdana, sans-serif" font-size="32" font-weight="700" fill="#1672C4" textLength="148" lengthAdjust="spacingAndGlyphs">aquaren</text>
+  <text x="78" y="62" font-family="Arial, Helvetica, sans-serif" font-size="10" font-weight="700" fill="#4F86B8" textLength="144">WATER SOLUTIONS</text>
+</svg>

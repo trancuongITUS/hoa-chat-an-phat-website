@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 80" width="240" height="80" role="img" aria-label="Sông Trà Beverage">
+  <circle cx="38" cy="40" r="28" fill="#E8702A"/>
+  <path d="M15 55 L31 30 L40 43 L48 33 L61 55 Z" fill="#fff"/>
+  <path d="M21 62 Q29 57 37 62 T53 62" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round"/>
+  <text x="76" y="44" font-family="Georgia, &apos;Times New Roman&apos;, serif" font-size="29" font-style="italic" font-weight="700" fill="#B6501A" textLength="140" lengthAdjust="spacingAndGlyphs">Sông Trà</text>
+  <text x="78" y="61" font-family="Arial, Helvetica, sans-serif" font-size="10" font-weight="700" fill="#D07A45" textLength="144">NATURAL BEVERAGE</text>
+</svg>

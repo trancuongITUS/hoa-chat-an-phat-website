@@ -16,6 +16,15 @@ export type PhysicalForm = 'long' | 'ran' | 'khi'
 /** Tình trạng kho — luôn hiển thị kèm icon và chữ, không chỉ bằng màu. */
 export type StockStatus = 'con-hang' | 'dat-truoc' | 'het-hang'
 
+/** Logo khách hàng cho dải chạy ở trang chủ — home.md §7. */
+export interface ClientLogo {
+  /** Tên công ty, dùng làm `alt` của logo. */
+  name: string
+  industry: string
+  /** Tệp SVG trong `public/`, khung 240 × 80. */
+  src: string
+}
+
 export type DocumentKind = 'MSDS' | 'COA' | 'CO' | 'CQ'
 
 export interface ProductDocument {

@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 80" width="240" height="80" role="img" aria-label="Vitilatex – Vĩnh Tiến Latex">
+  <circle cx="38" cy="40" r="26" fill="none" stroke="#8A5A2B" stroke-width="4"/>
+  <circle cx="38" cy="40" r="19" fill="none" stroke="#C99A5B" stroke-width="2" stroke-dasharray="4 4"/>
+  <path d="M38 22 C38 22 28 35 28 42 C28 47.5 32.5 52 38 52 C43.5 52 48 47.5 48 42 C48 35 38 22 38 22 Z" fill="#8A5A2B"/>
+  <text x="76" y="44" font-family="Arial, Helvetica, sans-serif" font-size="26" font-weight="700" fill="#6E4520" textLength="146" lengthAdjust="spacingAndGlyphs">VITILATEX</text>
+  <text x="77" y="61" font-family="Arial, Helvetica, sans-serif" font-size="10" font-weight="700" fill="#A0764A" textLength="144">VĨNH TIẾN LATEX</text>
+</svg>

@@ -498,7 +498,7 @@
 .marquee-track {
   display: flex;
   width: max-content;
-  animation: marquee-x 32s linear infinite;
+  animation: marquee-x var(--marquee-duration, 32s) linear infinite;
 }
 
 .marquee-list {

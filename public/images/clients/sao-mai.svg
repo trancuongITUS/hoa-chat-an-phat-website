@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 80" width="240" height="80" role="img" aria-label="Sao Mai Industrial Cleaning">
+  <path d="M34 10 C36 30 42 36 62 40 C42 44 36 50 34 70 C32 50 26 44 6 40 C26 36 32 30 34 10 Z" fill="#0F97B5"/>
+  <path d="M58 10 C59 17 61 19 68 20 C61 21 59 23 58 30 C57 23 55 21 48 20 C55 19 57 17 58 10 Z" fill="#F2B01E"/>
+  <text x="76" y="44" font-family="Arial, Helvetica, sans-serif" font-size="27" font-weight="900" fill="#0B6F86" textLength="146" lengthAdjust="spacingAndGlyphs">SAO MAI</text>
+  <text x="77" y="61" font-family="Arial, Helvetica, sans-serif" font-size="10" font-weight="700" fill="#3C95AA" textLength="148">INDUSTRIAL CLEANING</text>
+</svg>

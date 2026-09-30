@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 80" width="240" height="80" role="img" aria-label="Sạch Việt Industrial Care">
+  <path d="M38 10 L62 18 V38 C62 54 52 64 38 70 C24 64 14 54 14 38 V18 Z" fill="#1F3B73"/>
+  <path d="M26 40 L35 49 L51 31" fill="none" stroke="#7CB342" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="76" y="44" font-family="Arial, Helvetica, sans-serif" font-size="25" font-weight="900" textLength="152" lengthAdjust="spacingAndGlyphs"><tspan fill="#1F3B73">SẠCH</tspan><tspan fill="#7CB342">VIỆT</tspan></text>
+  <text x="77" y="61" font-family="Arial, Helvetica, sans-serif" font-size="10" font-weight="700" fill="#51658F" textLength="148">INDUSTRIAL CARE</text>
+</svg>

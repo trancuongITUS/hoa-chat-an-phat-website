@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 80" width="240" height="80" role="img" aria-label="NXE – Nước Xanh Envirotech">
+  <path d="M12 64 C10 34 32 14 64 14 C66 46 44 66 12 64 Z" fill="#2E8B57"/>
+  <path d="M16 60 L56 22" stroke="#fff" stroke-width="3.5" stroke-linecap="round"/>
+  <path d="M30 46 L30 34 M42 35 L42 25" stroke="#fff" stroke-width="2.5" stroke-linecap="round"/>
+  <text x="76" y="54" font-family="Arial, Helvetica, sans-serif" font-size="38" font-weight="900" fill="#1F6B42" textLength="76" lengthAdjust="spacingAndGlyphs">NXE</text>
+  <rect x="159" y="22" width="2" height="36" fill="#9CC9AE"/>
+  <text x="168" y="37" font-family="Arial, Helvetica, sans-serif" font-size="10" font-weight="700" fill="#2E8B57">NƯỚC XANH</text>
+  <text x="168" y="53" font-family="Arial, Helvetica, sans-serif" font-size="10" font-weight="400" fill="#4A6B58">ENVIROTECH</text>
+</svg>

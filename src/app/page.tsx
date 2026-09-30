@@ -9,7 +9,7 @@ import { TrustStats } from '@/components/home/trust-stats'
 import { getIcon } from '@/components/icon-map'
 import { ProductCard } from '@/components/product/product-card'
 import { Button } from '@/components/ui/button'
-import { CAPABILITIES, CERTIFICATES, CLIENT_LOGO_PLACEHOLDERS, COMPANY } from '@/data/company'
+import { CAPABILITIES, CERTIFICATES, CLIENT_LOGOS, COMPANY } from '@/data/company'
 import { SITE_IMAGES } from '@/data/images'
 import { PRODUCTS } from '@/data/products'
 import { INDUSTRIES } from '@/data/taxonomy'
@@ -253,7 +253,7 @@ function ClientSection() {
         />
 
         <div className="mt-10">
-          <ClientMarquee items={CLIENT_LOGO_PLACEHOLDERS} />
+          <ClientMarquee items={CLIENT_LOGOS} />
         </div>
       </div>
     </section>
